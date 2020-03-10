@@ -1,5 +1,7 @@
 # Capacitacion docker 101
     
+# NOMBRE: Christian Rene Cardenas Sanchez
+
 # EXPLICACIÓN
 
 La imagen que se crea es de un GLPI el cual es un sistema que ayuda a mantener el inventario de nuestro parque de PC que se tiene en la empresa.
