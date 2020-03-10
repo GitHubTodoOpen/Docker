@@ -17,12 +17,6 @@ RUN service apache2 start
 RUN ufw allow http
 # INSTALAR MYSQL
 RUN apt install -y  mariadb-server mariadb-client
-# CMD service mysql start
-# CMD mysql -u root
-# CMD create user glpi@localhost identified by 'glpi';
-# CMD create database glpi collate utf8mb4_general_ci character set utf8mb4;
-# CMD grant all privileges on glpi.* to glpi@localhost;
-# CMD exit;
 RUN apt install -y php-mysql
 # INSTALAR GLPI
 RUN wget https://github.com/glpi-project/glpi/releases/download/9.4.5/glpi-9.4.5.tgz
@@ -38,10 +32,7 @@ RUN apt install -y php-ldap
 RUN apt install -y php-mbstring
 RUN apt install -y php-simplexml
 RUN apt install -y php-xmlrpc
-# CMD service apache2 restart
 RUN a2enmod rewrite
 RUN touch /etc/apache2/conf-available/glpi.conf
 RUN echo "<Directory /var/www/html/glpi>\n AllowOverride all\n </Directory>" > /etc/apache2/conf-available/glpi.conf
 RUN a2enconf glpi
-# CMD service apache2 restart
-
